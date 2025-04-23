@@ -213,7 +213,7 @@ with col2:
     )
 
 st.subheader("Option Greeks")
-with st.expander("Show Greeks"):
+with st.expander("Option Greeks Details", expanded=True):
     col_g1, col_g2, col_g3, col_g4 = st.columns(4)
     with col_g1:
         st.metric(
@@ -221,21 +221,25 @@ with st.expander("Show Greeks"):
             f"{greeks['delta_call']:.4f}"
             if not np.isnan(greeks["delta_call"])
             else "N/A",
+            help="Rate of change of option price relative to the underlying asset price.",
         )
         st.metric(
             "Delta (Put)",
             f"{greeks['delta_put']:.4f}"
             if not np.isnan(greeks["delta_put"])
             else "N/A",
+            help="Rate of change of option price relative to the underlying asset price.",
         )
     with col_g2:
         st.metric(
             "Gamma",
             f"{greeks['gamma']:.4f}" if not np.isnan(greeks["gamma"]) else "N/A",
+            help="Rate of change of Delta relative to the underlying asset price.",
         )
         st.metric(
             "Vega (per 1% vol)",
             f"{greeks['vega']:.4f}" if not np.isnan(greeks["vega"]) else "N/A",
+            help="Sensitivity of option price to a 1% change in volatility.",
         )
     with col_g3:
         st.metric(
@@ -243,21 +247,25 @@ with st.expander("Show Greeks"):
             f"{greeks['theta_call']:.4f}"
             if not np.isnan(greeks["theta_call"])
             else "N/A",
+            help="Sensitivity of option price to the passage of one day (time decay).",
         )
         st.metric(
             "Theta (Put, per day)",
             f"{greeks['theta_put']:.4f}"
             if not np.isnan(greeks["theta_put"])
             else "N/A",
+            help="Sensitivity of option price to the passage of one day (time decay).",
         )
     with col_g4:
         st.metric(
             "Rho (Call, per 1% rate)",
             f"{greeks['rho_call']:.4f}" if not np.isnan(greeks["rho_call"]) else "N/A",
+            help="Sensitivity of option price to a 1% change in the risk-free interest rate.",
         )
         st.metric(
             "Rho (Put, per 1% rate)",
             f"{greeks['rho_put']:.4f}" if not np.isnan(greeks["rho_put"]) else "N/A",
+            help="Sensitivity of option price to a 1% change in the risk-free interest rate.",
         )
 
 st.markdown("---")  # Visual separator
