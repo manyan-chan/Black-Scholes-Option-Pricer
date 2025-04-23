@@ -1,7 +1,7 @@
 # Black-Scholes Option Pricing Calculator
 
 [![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)](https://www.python.org/)
-[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit.io/)
+[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://mychan-black-scholes-option-pricer.streamlit.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A web application built with Streamlit to calculate the theoretical price and Greeks for European call and put options using the Black-Scholes model.
